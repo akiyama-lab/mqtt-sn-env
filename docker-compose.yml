@@ -7,3 +7,15 @@ broker:
   volumes:
     - ./mosquitto/:/mosquitto/
 
+gateway:
+  build: ./dockerfiles/paho_mqttsn/
+  container_name: mqttsn_gateway
+  ports:
+    - 10000:10000
+  tty: true
+  # volumes:
+  #   - ./paho_mqttsn/:/paho_mqttsn/
+  command: MQTT-SNGateway /paho_mqttsn/config/gateway.conf
+  links:
+    - broker
+

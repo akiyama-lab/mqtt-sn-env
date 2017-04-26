@@ -1,0 +1,25 @@
+diff --git a/MQTTSNGateway/src/linux/Network.cpp b/MQTTSNGateway/src/linux/Network.cpp
+index 7c10ffa..1ead109 100644
+--- a/MQTTSNGateway/src/linux/Network.cpp
++++ b/MQTTSNGateway/src/linux/Network.cpp
+@@ -21,7 +21,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/socket.h>
+-#include <error.h>
++// #include <error.h>
+ #include <regex>
+ 
+ #include "Network.h"
+diff --git a/MQTTSNGateway/src/linux/Timer.h b/MQTTSNGateway/src/linux/Timer.h
+index 43885b1..544a249 100644
+--- a/MQTTSNGateway/src/linux/Timer.h
++++ b/MQTTSNGateway/src/linux/Timer.h
+@@ -18,6 +18,7 @@
+ 
+ #include "MQTTSNGWDefines.h"
+ #include <time.h>
++#include <sys/time.h>
+ namespace MQTTSNGW
+ {
+ /*==========================================================
