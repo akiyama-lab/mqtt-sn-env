@@ -11,7 +11,8 @@ gateway:
   build: ./dockerfiles/paho_mqttsn/
   container_name: mqttsn_gateway
   ports:
-    - 3881:3881
+    - 1883:1883/udp
+    - 3881:3881/udp
   tty: true
   volumes:
     - ./paho_mqttsn/:/paho_mqttsn/
