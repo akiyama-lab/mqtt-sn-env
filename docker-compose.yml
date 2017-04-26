@@ -11,11 +11,11 @@ gateway:
   build: ./dockerfiles/paho_mqttsn/
   container_name: mqttsn_gateway
   ports:
-    - 10000:10000
+    - 3881:3881
   tty: true
-  # volumes:
-  #   - ./paho_mqttsn/:/paho_mqttsn/
-  command: MQTT-SNGateway /paho_mqttsn/config/gateway.conf
+  volumes:
+    - ./paho_mqttsn/:/paho_mqttsn/
+  command: MQTT-SNGateway -f /paho_mqttsn/config/gateway.conf
   links:
     - broker
 
