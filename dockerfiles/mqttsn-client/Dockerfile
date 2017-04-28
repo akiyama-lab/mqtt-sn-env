@@ -10,6 +10,8 @@ RUN \
     cd /AsyncMQTT-SN && \
     patch -p1 -u < alpine-client.patch && \
     cd AsyncClient/ && \
-    make && \
-    cd Build
+    make
+
+WORKDIR /AsyncMQTT-SN/AsyncClient/Build
+
 
